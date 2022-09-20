@@ -1,58 +1,41 @@
-#include <iostream>
-using namespace std ;
+// Client Code - Siddhesh
+#include "interface_library.h"
 
-class human 
+// Client Code
+int main()
 {
-    public:
-    virtual void food ()
+    int selector = 0;
+    std::cin>>selector;
+    if(selector == 1)
     {
-
+        moveLeft();
     }
-};
-class child : public human 
-{
-    public:
-    void food ()
+    else if(selector == 2)
     {
-      cout<<"light  food "<<endl;
+        moveRight();
     }
-
-};
-class adult : public human
-{
-    public:
-    void food()
+    else if(selector == 3)
     {
-      cout<<"non veg";
+        moveFront();
     }
-};
-class overall
-{
-    public:
-    human *human_ptr;
-    child *child_ptr;
-    adult *adult_ptr;
- overall()
- {
-   human_ptr=new human;
-   child_ptr=new child;
-   adult_ptr=new adult;
- };
-
- void setmove(int a)
- {
-   if (a==1)
-   {
-    human_ptr=child_ptr;
-   }
-   if (a==2)
-   {
-    human_ptr=adult_ptr;
-   }
-  // human_ptr->void food ();
- };
- void food ()
- {
-   human_ptr->food();
- }
-};
+    else if(selector == 4)
+    {
+        moveBack();
+    }
+    else if(selector == 5)
+    {
+        moveNorthEast();
+    }
+    else if(selector == 6)
+    {
+        moveNorthWest();
+    }
+    else if(selector == 7)
+    {
+        moveSouthEast();
+    }
+    else if(selector == 8)
+    {
+        moveSouthWest();
+    }
+}
